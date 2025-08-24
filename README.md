@@ -186,16 +186,25 @@ Policy allows:
 
 {
   "Version": "2012-10-17",
+  
   "Statement": [
+  
     {
       "Effect": "Allow",
+      
       "Action": [
         "ec2:DescribeVpcs",
+        
         "ec2:DescribeVpcAttribute",
+        
         "ec2:DescribeSubnets",
+        
         "ec2:DescribeRouteTables",
+        
         "ec2:DescribeSecurityGroups"
+        
       ],
+      
       "Resource": "*"
     }
   ]
