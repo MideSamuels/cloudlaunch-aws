@@ -202,13 +202,5 @@ Policy allows:
   ]
 }
 
-🔑 **Console Access Details**
 
-Console URL:  https://samuel232.signin.aws.amazon.com/console
-
-Account ID / Alias: samuel232
-
-IAM Username: cloudlaunch-user
-
-Password: 
 
