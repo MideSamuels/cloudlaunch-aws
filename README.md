@@ -6,8 +6,8 @@ CloudLaunch AWS Deployment
 
 This project demonstrates deploying a lightweight product, CloudLaunch, on AWS. It consists of:
 
-Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions
-
+**Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions
+**
 S3 Buckets
 
 **cloudlaunch-site-buckettt**
@@ -57,7 +57,7 @@ http://cloudlaunch-site-buckettt.s3-website-eu-west-1.amazonaws.com
  CloudFront URL:
 https://d2uqgs7muxm3jf.cloudfront.net
 
-Task 2: VPC Design for CloudLaunch
+**Task 2: VPC Design for CloudLaunch**
 
 VPC
 
@@ -134,7 +134,7 @@ Policy allows:
   ]
 }
 
-🔑 Console Access Details
+🔑 **Console Access Details**
 
 Console URL:  https://samuel232.signin.aws.amazon.com/console
 
