@@ -201,7 +201,7 @@ Policy allows:
   ]
 }
 
-Console Access Details (details submitted in the google form)
+Console Access Details (submitted in the google form)
 
 Console URL:
 
