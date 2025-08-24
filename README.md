@@ -45,6 +45,8 @@ GetObject + PutObject on cloudlaunch-private-buckettt.
 No delete permission anywhere.
 
 No object access to cloudlaunch-visible-only-buckettt.
+<img width="1348" height="553" alt="image" src="https://github.com/user-attachments/assets/b3272226-1550-467a-a019-eb59f6150eda" />
+
 
 Custom IAM Policy:
 cloudlaunch-user
@@ -103,15 +105,19 @@ Static Website Link
 
 S3 Website URL:
 http://cloudlaunch-site-buckettt.s3-website-eu-west-1.amazonaws.com
+<img width="1688" height="914" alt="image" src="https://github.com/user-attachments/assets/abc57bf9-d48b-4271-80f1-2d7735455378" />
 
  CloudFront URL:
 https://d2uqgs7muxm3jf.cloudfront.net
+<img width="1731" height="959" alt="image" src="https://github.com/user-attachments/assets/69249b8a-0c30-43fb-9547-df4ca79fb470" />
 
 **Task 2: VPC Design for CloudLaunch**
 
 VPC
 
 Name: cloudlaunch-vpc
+<img width="1727" height="752" alt="image" src="https://github.com/user-attachments/assets/a7d93b0a-bbf7-482a-9ac4-55ec9e76c22e" />
+
 
 CIDR Block: 10.0.0.0/16
 
@@ -144,14 +150,20 @@ cloudlaunch-app-rt (App Subnet).
 cloudlaunch-db-rt (DB Subnet).
 
 No route to IGW (fully private).
+<img width="1770" height="517" alt="image" src="https://github.com/user-attachments/assets/73a000f6-023f-43eb-9f3f-bcef790d6be0" />
+
 
 Security Groups
 
 cloudlaunch-app-sg
+<img width="1815" height="546" alt="image" src="https://github.com/user-attachments/assets/8901c3c3-5f31-45d5-9139-61fdfa4f45be" />
+
 
 Allows HTTP (80) traffic within the VPC only.
 
 cloudlaunch-db-sg
+<img width="1767" height="569" alt="image" src="https://github.com/user-attachments/assets/e125d4ff-8b53-44a4-ac9e-7ede9ea96856" />
+
 
 Allows MySQL (3306) traffic only from app subnet.
 
