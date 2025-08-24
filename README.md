@@ -56,49 +56,84 @@ cloudlaunch-user
 
 {
     "Version": "2012-10-17",
+    
     "Statement": [
+    
         {
             "Effect": "Allow",
+            
             "Action": [
+            
                 "s3:ListAllMyBuckets"
+                
             ],
+            
             "Resource": "*"
         },
+        
         {
             "Effect": "Allow",
+            
             "Action": [
+            
                 "s3:ListBucket"
+                
             ],
+            
             "Resource": [
+            
                 "arn:aws:s3:::cloudlaunch-site-buckettt",
+                
                 "arn:aws:s3:::cloudlaunch-private-buckettt",
+                
                 "arn:aws:s3:::cloudlaunch-visible-only-buckettt"
             ]
+            
         },
+        
         {
             "Effect": "Allow",
+            
             "Action": [
+            
                 "s3:GetObject"
             ],
+            
             "Resource": "arn:aws:s3:::cloudlaunch-site-buckettt/*"
+            
         },
+        
         {
             "Effect": "Allow",
+            
             "Action": [
+            
                 "s3:GetObject",
+                
                 "s3:PutObject"
+                
             ],
+            
             "Resource": "arn:aws:s3:::cloudlaunch-private-buckettt/*"
+            
         },
         {
+        
             "Effect": "Allow",
+            
             "Action": [
                 "ec2:DescribeVpcs",
+                
                 "ec2:DescribeVpcAttribute",
+                
                 "ec2:DescribeSubnets",
+                
                 "ec2:DescribeRouteTables",
+                
                 "ec2:DescribeSecurityGroups"
+                
             ],
+            
             "Resource": "*"
         }
     ]
