@@ -1,4 +1,4 @@
-# cloudlaunch-aws
+# **cloudlaunch-aws**
 
 CloudLaunch AWS Deployment
 
@@ -6,8 +6,8 @@ CloudLaunch AWS Deployment
 
 This project demonstrates deploying a lightweight product, CloudLaunch, on AWS. It consists of:
 
-**Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions
-**
+**Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions**
+
 S3 Buckets
 
 **cloudlaunch-site-buckettt**
