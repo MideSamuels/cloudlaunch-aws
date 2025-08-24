@@ -30,7 +30,7 @@ IAM user (cloudlaunch-user) has GetObject/PutObject permissions only (no delete)
 
 Private bucket.
 
-IAM user can ListBucket (see it in list), but cannot read objects.
+IAM user can ListBucket, but cannot read objects.
 
 IAM User – cloudlaunch-user
 
