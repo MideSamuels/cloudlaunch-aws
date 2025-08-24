@@ -50,6 +50,10 @@ No object access to cloudlaunch-visible-only-buckettt.
 
 Custom IAM Policy:
 cloudlaunch-user
+<img width="1827" height="713" alt="image" src="https://github.com/user-attachments/assets/5b69aa30-b5f2-41b1-9129-21cc13d7d714" />
+<img width="1912" height="864" alt="image" src="https://github.com/user-attachments/assets/b4c61a11-71fc-4081-8107-ceff1285f935" />
+
+
 
 {
     "Version": "2012-10-17",
@@ -176,6 +180,8 @@ VPC, Subnets, Route Tables, Security Groups.
 No ability to modify/delete.
 
 📄 IAM Policy File: CloudLaunchVPCReadOnly
+<img width="1593" height="688" alt="image" src="https://github.com/user-attachments/assets/99c404cf-5653-4df0-8261-8c8e07cb35df" />
+
 
 Policy allows:
 
