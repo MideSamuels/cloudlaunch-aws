@@ -5,45 +5,114 @@ CloudLaunch AWS Deployment
 
 This project demonstrates deploying a lightweight product, CloudLaunch, on AWS. It consists of:
 
-Task 1: Hosting a static website on S3.
+Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions
 
-Task 2: Designing a secure VPC layout with strict IAM permissions.
+S3 Buckets
 
-The goal was to show AWS fundamentals in action — S3, IAM, and VPC — with restricted access controls.
+cloudlaunch-site-buckettt
 
-📝 Task 1 – S3 Static Website Hosting
+Hosts a simple static website (index.html, styles.css, script.js).
 
-Created an S3 bucket (cloudlaunch-site-buckettt) with static website hosting enabled.
+Enabled static website hosting.
 
-Uploaded static files (HTML, CSS, JS).
+Configured for public read-only access.
 
-Configured bucket policy for public read access (only for website content).
+CloudFront for HTTPS and caching.
 
-🔗 S3 Website URL: http://cloudlaunch-site-buckettt.s3-website-eu-west-1.amazonaws.com
+cloudlaunch-private-buckettt
 
-🔗 CloudFront URL: d2uqgs7muxm3jf.cloudfront.net
+Private bucket.
 
-📝 Task 2 – VPC Network Setup
+IAM user (cloudlaunch-user) has GetObject/PutObject permissions only (no delete).
 
-VPC with CIDR 10.0.0.0/16.
+cloudlaunch-visible-only-buckettt
 
-Subnets: 1 Public + 1 Private.
+Private bucket.
 
-Route Table: Public subnet routes internet traffic via Internet Gateway.
+IAM user can ListBucket (see it in list), but cannot read objects.
 
-Security Group Rule Example:
+IAM User – cloudlaunch-user
 
-Inbound HTTP (80) allowed from within VPC CIDR 10.0.0.0/16.
+Permissions:
 
-🔐 IAM Configuration
+ListBucket on all three buckets.
 
-Created IAM user: cloudlaunch-user
+GetObject on cloudlaunch-site-buckettt.
 
-Permissions: Read-only access to VPC components only (VPCs, Subnets, Route Tables, Security Groups).
+GetObject + PutObject on cloudlaunch-private-buckettt.
 
-Enforced password reset on first login.
+No delete permission anywhere.
 
-📄 IAM Policy File: cloudlaunch-user-policy.json
+No object access to cloudlaunch-visible-only-buckettt.
+
+Custom IAM Policy:
+cloudlaunch-user
+
+Static Website Link
+
+S3 Website URL:
+http://cloudlaunch-site-buckettt.s3-website-eu-west-1.amazonaws.com
+
+ CloudFront URL:
+https://d2uqgs7muxm3jf.cloudfront.net
+
+Task 2: VPC Design for CloudLaunch
+
+VPC
+
+Name: cloudlaunch-vpc
+
+CIDR Block: 10.0.0.0/16
+
+Subnets
+
+Public Subnet (10.0.1.0/24) → For load balancers/future public services.
+
+Application Subnet (10.0.2.0/24) → For private app servers.
+
+Database Subnet (10.0.3.0/28) → For private DB services (e.g., RDS).
+
+Internet Gateway (IGW)
+
+Name: cloudlaunch-igw
+
+Attached to cloudlaunch-vpc.
+
+Route Tables
+
+Public Route Table – cloudlaunch-public-rt
+
+Associated with Public Subnet.
+
+Has route 0.0.0.0/0 → cloudlaunch-igw.
+
+Private Route Tables
+
+cloudlaunch-app-rt (App Subnet).
+
+cloudlaunch-db-rt (DB Subnet).
+
+No route to IGW (fully private).
+
+Security Groups
+
+cloudlaunch-app-sg
+
+Allows HTTP (80) traffic within the VPC only.
+
+cloudlaunch-db-sg
+
+Allows MySQL (3306) traffic only from app subnet.
+
+IAM Permissions
+
+cloudlaunch-user has read-only access to VPC components:
+
+VPC, Subnets, Route Tables, Security Groups.
+
+No ability to modify/delete.
+
+📄 IAM Policy File: CloudLaunchVPCReadOnly
 
 Policy allows:
 
