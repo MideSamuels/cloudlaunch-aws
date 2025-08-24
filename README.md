@@ -9,7 +9,7 @@ Task 1: Static Website Hosting Using S3 + IAM User with Limited Permissions
 
 S3 Buckets
 
-cloudlaunch-site-buckettt
+**cloudlaunch-site-buckettt**
 
 Hosts a simple static website (index.html, styles.css, script.js).
 
@@ -19,13 +19,13 @@ Configured for public read-only access.
 
 CloudFront for HTTPS and caching.
 
-cloudlaunch-private-buckettt
+**cloudlaunch-private-buckettt**
 
 Private bucket.
 
 IAM user (cloudlaunch-user) has GetObject/PutObject permissions only (no delete).
 
-cloudlaunch-visible-only-buckettt
+**cloudlaunch-visible-only-buckettt**
 
 Private bucket.
 
