@@ -202,9 +202,13 @@ Policy allows:
 }
 
 Console Access Details (details submitted in the google form)
+
 Console URL:
+
 Account Alias :
+
 IAM Username:
+
 Password: (password will require a reset upon first login)
 
 
